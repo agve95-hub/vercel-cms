@@ -1,0 +1,2 @@
+import { db, schema } from "@/lib/db"; import { eq } from "drizzle-orm"; import { notFound } from "next/navigation"; import { PageEditor } from "@/components/admin/PageEditor";
+export default async function EditPost({ params }: { params: { id: string } }) { const [post] = await db.select().from(schema.posts).where(eq(schema.posts.id, params.id)).limit(1); if (!post) notFound(); return <PageEditor page={post}/>; }

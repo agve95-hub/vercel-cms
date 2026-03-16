@@ -1,0 +1,2 @@
+import { db, schema } from "@/lib/db";
+export default async function MenusPage() { const m = await db.select().from(schema.navigationMenus); return (<div><h1 className="text-2xl font-bold mb-6">Menus</h1><div className="bg-white rounded-xl border p-6">{m.length===0?<p className="text-gray-500 text-sm">No menus yet.</p>:m.map(x=>(<div key={x.id} className="border rounded-lg p-4 mb-3"><h3 className="font-medium">{x.name}</h3><pre className="text-xs text-gray-500 mt-2">{JSON.stringify(JSON.parse(x.items),null,2)}</pre></div>))}</div></div>); }

@@ -1,0 +1,1 @@
+export default function BackupsPage() { return (<div><h1 className="text-2xl font-bold mb-6">Backups</h1><div className="bg-white rounded-xl border p-6"><p className="text-sm text-gray-600">Use Hostinger panel → Databases → Backups for MySQL backups.</p></div></div>); }
